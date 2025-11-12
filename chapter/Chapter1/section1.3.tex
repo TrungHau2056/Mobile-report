@@ -1,10 +1,32 @@
-\section{Giới thiệu hệ thống quản lý tài chính Finhub}
+\section{Giới thiệu hệ thống nghe nhạc InsightTune}
+
+Nhận xét về hiện trạng và xem xét các hệ thống hiện có trên thị trường cũng như các nguồn mở, chúng tôi nhận thấy việc cần thiết để tạo ra một hệ thống đơn giản
+nhưng cụ thể và chi tiết về việc tích hợp AI vào trong các hệ thống nghe nhạc hiện hành. Hệ thống này đảm bảo hoàn thiện các ca sử dụng (xem thêm tại \ref{chapter:requirements}), 
+cũng như xây dựng kiến trúc dễ dàng mở rộng, triển khai \ref{chapter:architecture}. Các ca sử dụng cần đảm bảo độ ổn định thông qua các tâng test khác nhau, được
+viết chạy tự động hóa để đảm khả năng tái sự dụng. Hệ thống sau khi hoàn thiện được đóng gói tốt, có sẵn khuôn mẫu cũng như cách triển khai đơn giản trên hệ thống đám 
+mây với back end và trên nền tảng di động với front end. Chúng sau tổng hợp những vấn đề phát sinh từ hiện trạng này, tại đây xin được đề xuất và giới thiệu InsightTune,
+một hệ thống mã nguồn mở nghe nhạc tích hợp AI.
+
+\vspace{1cm}
+\textbf{InsightTune} hướng tới giải quyết những \textbf{vấn đề} sau:
 \begin{itemize}
-    \item Một hệ thống quản lý tài chính cá nhân hiện đại, nhằm hỗ trợ theo dõi, quản lý và tối ưu hóa hoạt động tài chính hàng ngày hiệu quả và tiện lợi.
-    
-    \item Giao diện thân thiện, dễ sử dụng trên nền tảng web, giúp người dùng dễ dàng nhập các khoản thu, chi, lập kế hoạch và theo dõi tình hình tài chính.
-
-    \item Tích hợp AI cải thiện trải nghiệm người dùng, hỗ trợ trong việc quản lý thu chi triệt để hơn.  
-
-    \item Chuẩn bảo mật hiện đại, đảm bảo thông tin người dùng được bảo vệ.\\
+    \item Hệ thống nghe nhạc mã nguồn mở chưa tích hợp AI.
+    \item Độ phức tạp và khả năng mở rộng của các hệ thống.
+    \item Khả năng tái sử dụng các thành phần trong hệ thống
+    \item Công cụ cho những nhà phát triển mới thử nghiệm tích hợp AI vào hệ thống
+    \item Khả năng triển khai đơn giản trên nền tảng đám mây như Amazon Web Services (AWS).
 \end{itemize}
+\vspace{1cm}
+
+Những \textbf{giải pháp} chúng tôi ứng dụng trong \textbf{InsightTune} gồm có:
+\begin{itemize}
+    \item Kiến trúc Microservices để xây dựng hệ thống back end, giúp dễ dàng mở rộng và tái sử dụng các thành phần.
+    \item LLM gọi API đơn giản để xây dựng Chatbot trợ lý ảo giúp người dùng tương tác và quản lý âm nhạc.
+    \item Hệ thống gợi ý RS để cá nhân hóa trải nghiệm nghe nhạc cho người dùng.
+    \item Xây dựng front end mobile app với giao diện đơn giản, dễ sử dụng.
+    \item Cung cấp các ca kiểm thử tự động để cho nhà phát triển đảm bảo độ ổn định khi mở rộng hệ thống.
+    \item Cung cấp hướng dẫn triển khai hệ thống đơn giản trên nền tảng đám mây AWS.
+\end{itemize}
+
+Tóm lại, \textbf{InsightTune} là một hệ thống nghe nhạc mã nguồn mở tích hợp AI, được thiết kế để giải quyết các vấn đề hiện tại trong lĩnh vực này. 
+Nó cung cấp một framework dễ dàng mở rộng, tái sử dụng và triển khai, giúp các nhà phát triển mới có thể thử nghiệm và tích hợp các công nghệ AI tiên tiến vào hệ thống nghe nhạc.
