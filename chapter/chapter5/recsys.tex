@@ -1,2 +1,17 @@
 \section{Xây dựng mô hình gợi ý}
 \label{sec:recommend_model}
+
+\subsection{Giới thiệu về HAC-NSW}
+Hyper Actor Critic Framework with Nash Social Welfare (\textbf{HAC-NSW}) là một mô hình học tăng cường phục vụ cho hệ thống gợi ý nền tảng chuỗi sự kiện, hệ thống nhận đầu vào
+một chuỗi thông tin (ví dụ lịch sử âm nhạc của người dùng), sau đó sẽ trả về một tập các gợi ý (ví dụ năm bài hát được gợi ý). Luồng xử lý của mô hình này được
+biểu diễn trong biểu đồ \ref{fig:fair_hac} dưới đây.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/fair-hac.png}
+  \caption{Luồng của mô hình HAC-NSW}
+  \label{fig:fair_hac}
+\end{figure}
+
+Mô hình sẽ được huấn luyện dựa trên một môi trường ảo (được huấn luyện và kiểm thử riêng). HAC-NSW chính là mở rộng của Hyper Actor Critic Framework, một framework
+mạnh mẽ cho gợi ý với không gian gợi ý lớn (large item space).
