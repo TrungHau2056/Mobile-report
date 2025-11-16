@@ -198,6 +198,46 @@ POST /favorites/delete
 POST /auth/logout  &
 none \\
 \hline
+\hypertarget{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & Kiểm thử giao diện đăng kí người dùng thành công & Người dùng đăng kí email: "23021558@vnu.edu.vn", password: "12345678h", confirmPassword: "12345678h", firstname: "Hoang", lastname: "Doan" & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo "register\_successfully" \\
+\hline
+\hypertarget{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & Kiểm thử giao diện đăng nhập người dùng thành công & Người dùng đăng nhập email: "23021558@vnu.edu.vn", password: "12345678h" & Màn hình chuyển đến trang chủ, hiển thị Toast "Login successfully!" \\
+\hline
+\hypertarget{tc:ui-sign-in-unsuccessfully}{Giao diện đăng nhập người dùng - sai mật khẩu} & Kiểm thử giao diện đăng nhập người dùng với mật khẩu sai & Người dùng đăng nhập email: "23021558@vnu.edu.vn", password: "1234567" & Hiển thị thông báo lỗi "Incorrect email or password" \\
+\hline
+\hypertarget{tc:ui-sign-up-navigation}{Điều hướng giao diện đăng kí người dùng} & Kiểm thử điều hướng giữa các giao diện đăng kí & Người dùng nhấn vào nút "Next" trên giao diện đăng kí email hoặc mật khẩu để chuyển sang giao diện tiếp theo và ấn biểu tượng "Back" để quay lại giao diện trước đó & Giao diện chuyển sang giao diện tiếp theo hoặc quay lại giao diện trước đó tương ứng \\
+\hline
+\hypertarget{tc:ui-forget-password-enter email}{Giao diện quên mật khẩu - nhập email} & Kiểm thử giao diện quên mật khẩu khi nhập email & Người dùng nhập email: "23021558@vnu.edu.vn" và ấn nút "Gửi mã OTP" & Màn hình chuyển sang giao diện nhập mã OTP, hiển thị thông báo gửi mã OTP thành công \\
+\hline
+\hypertarget{tc:ui-forget-password-enter-otp}{Giao diện quên mật khẩu - nhập OTP} & Kiểm thử giao diện quên mật khẩu khi nhập mã OTP & Người dùng nhập mã OTP đúng: "123456" và ấn nút xác nhận & Màn hình chuyển sang giao diện tạo mật khẩu mới\\
+\hline
+\hypertarget{tc:ui-forget-password-changePassword}{Giao diện quên mật khẩu - tạo mật khẩu mới} & Kiểm thử giao diện quên mật khẩu khi tạo mật khẩu mới & Người dùng nhập mật khẩu mới: "12345678h", confirmPassword: "12345678h" và ấn nút "Xác nhận" & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo đổi mật khẩu thành công \\
+\hline
+\hypertarget{tc:ui-home}{Giao diện màn hình chính} & Kiểm thử giao diện màn hình chính hiển thị đúng các bài hát được đề xuất & Người dùng đăng nhập thành công & Giao diện hiển thị đúng các bài hát được đề xuất \\
+\hline
+\hypertarget{tc:ui-search-track}{Giao diện tìm kiếm bài hát} & Kiểm thử giao diện tìm kiếm bài hát hoạt động đúng & Người dùng nhập từ khóa "Taylor" vào thanh tìm kiếm & Giao diện hiển thị danh sách các bài hát liên quan đến từ khóa "Taylor", cụ thể là các bài hát "Love Story", "The Fate of Ophelia" \\
+\hline
+\hypertarget{tc:ui-play-track}{Giao diện phát nhạc } & Kiểm thử giao diện phát bài hát hoạt động đúng & Người dùng chọn bài hát "Love Story" & Giao diện chuyển sang giao diện phát bài hát, hiển thị đúng thông tin bài hát "Love Story", bài hát bắt đầu phát \\
+\hline
+\hypertarget{tc:ui-play-and-pause}{Nút phát/tạm dừng} & Kiểm thử nút phát/tạm dừng hoạt động đúng & Người dùng nhấn nút phát/tạm dừng trên giao diện phát bài "Love Story" & Bài hát được phát hoặc tạm dừng tương ứng, nút ấn cũng được thay đổi trạng thái tương ứng \\
+\hline
+\hypertarget{tc:ui-next-track}{Nút chuyển bài tiếp} & Kiểm thử nút bài hát tiếp theo hoạt động đúng & Người dùng nhấn nút bài hát tiếp theo trên giao diện phát bài "Love Story" & Giao diện chuyển sang bài hát tiếp theo "The Fate of Ophelia", bài hát bắt đầu phát \\
+\hline
+\hypertarget{tc:ui-previous-track}{Nút chuyển bài trước} & Kiểm thử nút chuyển bài trước hoạt động đúng & Người dùng nhấn nút bài hát trước trên giao diện phát bài "The Fate of Ophelia" & Giao diện chuyển sang bài hát trước "Love Story", bài hát bắt đầu phát \\
+\hline
+\hypertarget{tc:ui-favorite-button}{Nút thêm vào mục yêu thích} & Kiểm thử nút thêm bài hát vào mục yêu thích hoạt động đúng & Người dùng nhấn nút yêu thích trên giao diện phát bài "Love Story" & Bài hát "Love Story" được thêm vào mục yêu thích, nút yêu thích chuyển sang có màu \\
+\hline
+\hypertarget{tc:ui-shuffle-button}{Nút phát ngẫu nhiên/lặp lại} & Kiểm thử nút phát ngẫu nhiên/lặp lại hoạt động đúng & Người dùng nhấn nút phát ngẫu nhiên/lặp lại trên giao diện phát bài "Love Story" & Chế độ phát lặp lại được kích hoạt do mặc định là ngẫu nhiên, nút ấn cũng được thay đổi thành không màu \\
+\hline
+\hypertarget{tc:ui-favorites}{Giao diện các bài hát yêu thích} & Kiểm thử giao diện danh sách bài hát yêu thích hiển thị đúng & Người dùng truy cập vào mục yêu thích từ thanh điều hướng & Giao diện hiển thị đúng danh sách các bài hát yêu thích của người dùng \\
+\hline
+\hypertarget{tc:profile}{Giao diện thông tin cá nhân của người dùng} & Kiểm thử giao diện thông tin cá nhân hiển thị đúng & Người dùng truy cập vào mục thông tin cá nhân từ màn hình chính & Giao diện hiển thị đúng thông tin cá nhân của người dùng, bao gồm tên, ảnh đại diện và email cũng như các nút chức năng đổi thông tin, đổi mật khẩu, đổi giao diện, đổi ngôn ngữ và đăng xuất \\
+\hline  
+\hypertarget{tc:logout}{Đăng xuất người dùng} & Kiểm thử chức năng đăng xuất người dùng hoạt động đúng & Người dùng nhấn nút đăng xuất từ mục thông tin cá nhân & Người dùng được đăng xuất khỏi hệ thống, màn hình chuyển về màn hình bắt đầu \\
+\hline
+\hypertarget{tc:change_avatar_step1}{Đổi ảnh đại diện - Bước 1} & Kiểm thử chức năng đổi ảnh đại diện hoạt động đúng & Người dùng nhấn vào ảnh đại diện hiện tại & Màn hình hiện ra cho phép người dùng chọn ảnh từ thư viện hoặc chụp một ảnh mới từ camera \\
+\hline
+\hypertarget{tc:change_avatar_step2}{Đổi ảnh đại diện - Bước 2} & Kiểm thử chức năng đổi ảnh đại diện hoạt động đúng & Người dùng chọn một ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp \\
+\hline
 \end{longtable}
 
 \subsection{Thực thi các ca kiểm thử}
