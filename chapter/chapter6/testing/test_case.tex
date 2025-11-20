@@ -176,11 +176,6 @@ Kiếm thử xem bài hát người dùng đã nghe &
 Người dùng đăng nhập thành công &
 Danh sách bài hát đã nghe gần đây hiện trên giao diện home \\
 \hline
-\hypertarget{tc:perf-basic}{Hiệu năng} &
-Kiểm thử hiệu năng luồng hoạt động cơ bản hệ thống &
-Number of users: 100, Ramp up: 5, Host: localhost:4010, Endpoints: POST /auth/register; POST /auth/login PUT /user/changePassword POST /auth/refresh GET /users PUT /users GET /tracks GET /tracks/search?keyword=Taylor GET /history/search GET /tracks/next/33333333-3333-3333-3333-333333333333 POST /favorites/add GET /favorites POST /favorites/delete POST /auth/logout &
-none \\
-\hline
 \hypertarget{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & Kiểm thử giao diện đăng kí người dùng thành công & Người dùng đăng kí email: ``23021558@vnu.edu.vn'', password: ``12345678h'', confirmPassword: ``12345678h'', firstname: ``Hoang'', lastname: ``Doan'' & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register-successfully'' \\
 \hline
 \hypertarget{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & Kiểm thử giao diện đăng nhập người dùng thành công & Người dùng đăng nhập email: ``23021558@vnu.edu.vn'', password: ``12345678h'' & Màn hình chuyển đến trang chủ, hiển thị Toast ``Login successfully!'' \\
@@ -358,112 +353,110 @@ none \\
 \hline
 30 & \hyperlink{tc:view-recent}{Xem bài hát gần đây} & 26/10/2025 & Nguyễn Quốc Huy  & Danh sách bài hát đã nghe gần đây hiện trên giao diện home & Đạt \\
 \hline
-31 & \hyperlink{tc:perf-basic}{Hiệu năng - luồng cơ bản} & 12/11/2025 & Trần Quang Đỉnh  & Max $< 1.9$s, Fails: 0, RPM/s: 166 & Đạt \\
+31 & \hyperlink{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register-successfully'' & Đạt \\
 \hline
-32 & \hyperlink{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register-successfully'' & Đạt \\
-\hline
-33 & \hyperlink{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển đến trang chủ, hiển thị Toast ``Login successfully!'' & Đạt \\
+32 & \hyperlink{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển đến trang chủ, hiển thị Toast ``Login successfully!'' & Đạt \\
 \hline  
-34 & \hyperlink{tc:ui-sign-in-unsuccessfully}{Giao diện đăng nhập người dùng - sai mật khẩu} & 03/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi ``Incorrect email or password'' & Đạt \\
+33 & \hyperlink{tc:ui-sign-in-unsuccessfully}{Giao diện đăng nhập người dùng - sai mật khẩu} & 03/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi ``Incorrect email or password'' & Đạt \\
+\hline
+34 & \hyperlink{tc:ui-sign-up-navigation}{Điều hướng giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện chuyển sang giao diện tiếp theo hoặc quay lại giao diện trước đó tương ứng & Đạt \\
 \hline  
-35 & \hyperlink{tc:ui-sign-up-navigation}{Điều hướng giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện chuyển sang giao diện tiếp theo hoặc quay lại giao diện trước đó tương ứng & Đạt \\
+35 & \hyperlink{tc:ui-forget-password-enter-email}{Giao diện quên mật khẩu - nhập email} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển sang giao diện nhập mã OTP, hiển thị thông báo gửi mã OTP thành công & Đạt \\
 \hline  
-36 & \hyperlink{tc:ui-forget-password-enter-email}{Giao diện quên mật khẩu - nhập email} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển sang giao diện nhập mã OTP, hiển thị thông báo gửi mã OTP thành công & Đạt \\
+36 & \hyperlink{tc:ui-forget-password-enter-otp}{Giao diện quên mật khẩu - nhập OTP} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển sang giao diện tạo mật khẩu mới & Đạt \\
+\hline
+37 & \hyperlink{tc:ui-forget-password-changePassword}{Giao diện quên mật khẩu - tạo mật khẩu mới} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``Change password successfully!'' & Đạt \\
+\hline
+38 & \hyperlink{tc:ui-home}{Giao diện màn hình chính} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng các bài hát được đề xuất & Đạt \\
+\hline
+39 & \hyperlink{tc:ui-search-track}{Giao diện tìm kiếm bài hát} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị danh sách các bài hát liên quan đến từ khóa ``Taylor'', cụ thể là các bài hát ``Love Story'', ``The Fate of Ophelia'' & Đạt \\
+\hline
+40 & \hyperlink{tc:ui-search-no-track}{Giao diện tìm kiếm bài hát - không có kết quả} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị thông báo ``Không tìm thấy kết quả'' & Đạt \\
+\hline
+41 & \hyperlink{tc:ui-play-track}{Giao diện phát nhạc} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang giao diện phát bài hát, hiển thị đúng thông tin bài hát ``Love Story'', bài hát bắt đầu phát & Đạt \\
+\hline
+42 & \hyperlink{tc:ui-play-and-pause}{Nút tạm dừng} & 05/11/2025 & Trần Trung Hậu & Bài hát được tạm dừng, nút ấn cũng được thay đổi trạng thái tương ứng thành nút ``Play'' & Đạt \\
+\hline
+43 & \hyperlink{tc:ui-next-track}{Nút chuyển bài tiếp} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát tiếp theo ``The Fate of Ophelia'', bài hát bắt đầu phát & Đạt \\
+\hline
+44 & \hyperlink{tc:ui-previous-track}{Nút chuyển bài trước} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát trước ``Love Story'', bài hát bắt đầu phát & Đạt \\
+\hline
+45 & \hyperlink{tc:ui-favorite-button}{Nút thêm vào mục yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát ``Love Story'' được thêm vào mục yêu thích, nút yêu thích chuyển sang có màu & Đạt \\
+\hline
+46 & \hyperlink{tc:ui-shuffle-button}{Nút phát ngẫu nhiên/lặp lại} & 04/11/2025 & Đoàn Minh Hoàng & Chế độ phát lặp lại được kích hoạt do mặc định là ngẫu nhiên, nút ấn cũng được thay đổi thành không màu & Đạt \\
+\hline
+47 & \hyperlink{tc:ui-favorites}{Giao diện các bài hát yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng danh sách các bài hát yêu thích của người dùng & Đạt \\
+\hline
+48 & \hyperlink{tc:delete-favorites}{Xóa bài hát khỏi danh sách yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát ``Love Story'' được xóa khỏi danh sách yêu thích, giao diện cập nhật lại danh sách yêu thích với bài ``Love Story'' đã được xóa & Đạt \\
+\hline
+49 & \hyperlink{tc:history}{Bài hát đã nghe gần đây} & 05/11/2025 & Đoàn Minh Hoàng & Trên màn hình chính xuất hiện dòng ``Recently played'' với 3 bài hát ``Love Story'', ``The Fate of Ophelia'', ``Từng là'' & Đạt \\
+\hline
+50 & \hyperlink{tc:profile}{Giao diện thông tin cá nhân của người dùng} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng thông tin cá nhân của người dùng, bao gồm tên, ảnh đại diện và email cũng như các nút chức năng đổi thông tin, đổi mật khẩu, đổi giao diện, đổi ngôn ngữ và đăng xuất & Đạt \\
+\hline
+51 & \hyperlink{tc:logout}{Đăng xuất người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Người dùng được đăng xuất khỏi hệ thống, màn hình chuyển về màn hình bắt đầu & Đạt \\
+\hline
+52 & \hyperlink{tc:change-avatar-step1}{Đổi ảnh đại diện - Bước 1} & 08/11/2025 & Đoàn Minh Hoàng & Màn hình hiện ra cho phép người dùng chọn ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Đạt \\
 \hline  
-37 & \hyperlink{tc:ui-forget-password-enter-otp}{Giao diện quên mật khẩu - nhập OTP} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển sang giao diện tạo mật khẩu mới & Đạt \\
-\hline
-38 & \hyperlink{tc:ui-forget-password-changePassword}{Giao diện quên mật khẩu - tạo mật khẩu mới} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``Change password successfully!'' & Đạt \\
-\hline
-39 & \hyperlink{tc:ui-home}{Giao diện màn hình chính} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng các bài hát được đề xuất & Đạt \\
-\hline
-40 & \hyperlink{tc:ui-search-track}{Giao diện tìm kiếm bài hát} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị danh sách các bài hát liên quan đến từ khóa ``Taylor'', cụ thể là các bài hát ``Love Story'', ``The Fate of Ophelia'' & Đạt \\
-\hline
-41 & \hyperlink{tc:ui-search-no-track}{Giao diện tìm kiếm bài hát - không có kết quả} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị thông báo ``Không tìm thấy kết quả'' & Đạt \\
-\hline
-42 & \hyperlink{tc:ui-play-track}{Giao diện phát nhạc} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang giao diện phát bài hát, hiển thị đúng thông tin bài hát ``Love Story'', bài hát bắt đầu phát & Đạt \\
-\hline
-43 & \hyperlink{tc:ui-play-and-pause}{Nút tạm dừng} & 05/11/2025 & Trần Trung Hậu & Bài hát được tạm dừng, nút ấn cũng được thay đổi trạng thái tương ứng thành nút ``Play'' & Đạt \\
-\hline
-44 & \hyperlink{tc:ui-next-track}{Nút chuyển bài tiếp} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát tiếp theo ``The Fate of Ophelia'', bài hát bắt đầu phát & Đạt \\
-\hline
-45 & \hyperlink{tc:ui-previous-track}{Nút chuyển bài trước} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát trước ``Love Story'', bài hát bắt đầu phát & Đạt \\
-\hline
-46 & \hyperlink{tc:ui-favorite-button}{Nút thêm vào mục yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát ``Love Story'' được thêm vào mục yêu thích, nút yêu thích chuyển sang có màu & Đạt \\
-\hline
-47 & \hyperlink{tc:ui-shuffle-button}{Nút phát ngẫu nhiên/lặp lại} & 04/11/2025 & Đoàn Minh Hoàng & Chế độ phát lặp lại được kích hoạt do mặc định là ngẫu nhiên, nút ấn cũng được thay đổi thành không màu & Đạt \\
-\hline
-48 & \hyperlink{tc:ui-favorites}{Giao diện các bài hát yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng danh sách các bài hát yêu thích của người dùng & Đạt \\
-\hline
-49 & \hyperlink{tc:delete-favorites}{Xóa bài hát khỏi danh sách yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát ``Love Story'' được xóa khỏi danh sách yêu thích, giao diện cập nhật lại danh sách yêu thích với bài ``Love Story'' đã được xóa & Đạt \\
-\hline
-50 & \hyperlink{tc:history}{Bài hát đã nghe gần đây} & 05/11/2025 & Đoàn Minh Hoàng & Trên màn hình chính xuất hiện dòng ``Recently played'' với 3 bài hát ``Love Story'', ``The Fate of Ophelia'', ``Từng là'' & Đạt \\
-\hline
-51 & \hyperlink{tc:profile}{Giao diện thông tin cá nhân của người dùng} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng thông tin cá nhân của người dùng, bao gồm tên, ảnh đại diện và email cũng như các nút chức năng đổi thông tin, đổi mật khẩu, đổi giao diện, đổi ngôn ngữ và đăng xuất & Đạt \\
-\hline
-52 & \hyperlink{tc:logout}{Đăng xuất người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Người dùng được đăng xuất khỏi hệ thống, màn hình chuyển về màn hình bắt đầu & Đạt \\
-\hline
-53 & \hyperlink{tc:change-avatar-step1}{Đổi ảnh đại diện - Bước 1} & 08/11/2025 & Đoàn Minh Hoàng & Màn hình hiện ra cho phép người dùng chọn ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Đạt \\
+53 & \hyperlink{tc:change-avatar-step2}{Đổi ảnh đại diện - Bước 2} & 08/11/2025 & Đoàn Minh Hoàng & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp & Đạt \\
 \hline  
-54 & \hyperlink{tc:change-avatar-step2}{Đổi ảnh đại diện - Bước 2} & 08/11/2025 & Đoàn Minh Hoàng & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp & Đạt \\
-\hline  
-55 & \hyperlink{tc:update_information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
+54 & \hyperlink{tc:update_information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
 \hline
-56 & \hyperlink{tc:update_information_missing_field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
+55 & \hyperlink{tc:update_information_missing_field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
 \hline
-57 & \hyperlink{tc:change_password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
+56 & \hyperlink{tc:change_password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
 \hline
-58 & \hyperlink{tc:change_theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
+57 & \hyperlink{tc:change_theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
 \hline
-59 & \hyperlink{tc:change_language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
+58 & \hyperlink{tc:change_language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
 \hline
-60 & \hyperlink{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & 10/11/2025 & Trần Trung Hậu & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn & Đạt \\
+59 & \hyperlink{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & 10/11/2025 & Trần Trung Hậu & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn & Đạt \\
 \hline
-61 & \hyperlink{tc:send-message-chatbot}{Gửi tin nhắn đến chatbot} & 10/11/2025 & Trần Trung Hậu & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
+60 & \hyperlink{tc:send-message-chatbot}{Gửi tin nhắn đến chatbot} & 10/11/2025 & Trần Trung Hậu & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
 \hline
-62 & \hyperlink{tc:prevent-empty-message-chatbot}{Ngăn chặn gửi tin nhắn trống} & 10/11/2025 & Trần Trung Hậu & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
+61 & \hyperlink{tc:prevent-empty-message-chatbot}{Ngăn chặn gửi tin nhắn trống} & 10/11/2025 & Trần Trung Hậu & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-63 & \hyperlink{tc:bot-typing-indicator}{Chỉ báo chatbot đang trả lời} & 10/11/2025 & Trần Trung Hậu & Hiển thị chỉ báo chatbot đang trả lời trong khu vực hiển thị tin nhắn cho đến khi nhận được phản hồi từ chatbot & Đạt \\
+62 & \hyperlink{tc:bot-typing-indicator}{Chỉ báo chatbot đang trả lời} & 10/11/2025 & Trần Trung Hậu & Hiển thị chỉ báo chatbot đang trả lời trong khu vực hiển thị tin nhắn cho đến khi nhận được phản hồi từ chatbot & Đạt \\
 \hline
-64 & \hyperlink{tc:auto-scroll-chatbot}{Tự động cuộn khu vực hiển thị tin nhắn} & 10/11/2025 & Trần Trung Hậu & Khu vực hiển thị tin nhắn tự động cuộn xuống để hiển thị tin nhắn mới nhất & Đạt \\
+63 & \hyperlink{tc:auto-scroll-chatbot}{Tự động cuộn khu vực hiển thị tin nhắn} & 10/11/2025 & Trần Trung Hậu & Khu vực hiển thị tin nhắn tự động cuộn xuống để hiển thị tin nhắn mới nhất & Đạt \\
 \hline
-65 & \hyperlink{tc:voice-permission-flow}{Quy trình cấp quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối & Đạt \\
+64 & \hyperlink{tc:voice-permission-flow}{Quy trình cấp quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối & Đạt \\
 \hline
-66 & \hyperlink{tc:voice_input_chatbot}{Nhập tin nhắn bằng giọng nói} & 10/11/2025 & Trần Trung Hậu & Tin nhắn ``Hello'' được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
+65 & \hyperlink{tc:voice_input_chatbot}{Nhập tin nhắn bằng giọng nói} & 10/11/2025 & Trần Trung Hậu & Tin nhắn ``Hello'' được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
 \hline
-67 & \hyperlink{tc:voice-input-no-permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
+66 & \hyperlink{tc:voice-input-no-permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-68 & \hyperlink{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
+67 & \hyperlink{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-69 & \hyperlink{tc:check-voice-unsupported-format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
+68 & \hyperlink{tc:check-voice-unsupported-format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
 \hline
-70 & \hyperlink{tc:input-be-chatbot}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Chào bạn! Tôi có thể giúp gì? & Đạt \\
+69 & \hyperlink{tc:input-be-chatbot}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Chào bạn! Tôi có thể giúp gì? & Đạt \\
 \hline
-71 & \hyperlink{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lời bài hát Lâu không cười:... & Đạt \\
+70 & \hyperlink{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lời bài hát Lâu không cười:... & Đạt \\
 \hline
-72 & \hyperlink{tc:input-lyrics-english-chatbot}{Nhập lời bài hát tiếng Anh} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lyrics of Love Story:... & Đạt \\
+71 & \hyperlink{tc:input-lyrics-english-chatbot}{Nhập lời bài hát tiếng Anh} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lyrics of Love Story:... & Đạt \\
 \hline
-73 & \hyperlink{tc:playing-song-chatbot}{Phát bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: playMusic, song name: Ngày mai em đi & Đạt \\
+72 & \hyperlink{tc:playing-song-chatbot}{Phát bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: playMusic, song name: Ngày mai em đi & Đạt \\
 \hline
-74 & \hyperlink{tc:suggest-song-chatbot}{Gợi ý bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: "1... 2... 3..." & Đạt \\
+73 & \hyperlink{tc:suggest-song-chatbot}{Gợi ý bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: "1... 2... 3..." & Đạt \\
 \hline
-75 & \hyperlink{tc:infor-author-chatbot}{Thông tin tác giả thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tác giả của bài hát Từng là là... & Đạt \\
+74 & \hyperlink{tc:infor-author-chatbot}{Thông tin tác giả thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tác giả của bài hát Từng là là... & Đạt \\
 \hline
-76 & \hyperlink{tc:remember-thread-id}{Ghi nhớ thread id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Bạn tên là Hậu,.. & Đạt \\
+75 & \hyperlink{tc:remember-thread-id}{Ghi nhớ thread id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Bạn tên là Hậu,.. & Đạt \\
 \hline
-77 & \hyperlink{tc:seperate-thread-id}{Tách biệt thread id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tôi không biết bạn tên gì,... & Đạt \\
+76 & \hyperlink{tc:seperate-thread-id}{Tách biệt thread id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tôi không biết bạn tên gì,... & Đạt \\
 \hline
-78 & \hyperlink{tc:bug-duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & 12/11/2025 & Trần Trung Hậu & Log có hiện ERROR Duckduckgo-tool.-run ... và Connection timed out & Đạt \\
+77 & \hyperlink{tc:bug-duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & 12/11/2025 & Trần Trung Hậu & Log có hiện ERROR Duckduckgo-tool.-run ... và Connection timed out & Đạt \\
 \hline
-79 & \hyperlink{tc:bug-scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & 12/11/2025 & Trần Trung Hậu & Log có hiện ERROR scrape-website ... 404 Client Error: Not Found for url: & Đạt \\
+78 & \hyperlink{tc:bug-scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & 12/11/2025 & Trần Trung Hậu & Log có hiện ERROR scrape-website ... 404 Client Error: Not Found for url: & Đạt \\
 \hline
-80 & \hyperlink{tc:required-parallelism}{Kiểm tra luồng song song trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được 10 response type: reply, reply: Xin chào user i! & Đạt \\
+79 & \hyperlink{tc:required-parallelism}{Kiểm tra luồng song song trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được 10 response type: reply, reply: Xin chào user i! & Đạt \\
 \hline
-81 & \hyperlink{tc:exception-handling}{Xử lý ngoài phạm vi của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. & Đạt \\
+80 & \hyperlink{tc:exception-handling}{Xử lý ngoài phạm vi của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. & Đạt \\
 \hline
-82 & \hyperlink{tc:check-voice}{Xử lý giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Xin chào & Đạt \\
+81 & \hyperlink{tc:check-voice}{Xử lý giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Xin chào & Đạt \\
 \hline
-83 & \hyperlink{tc:check-voice-no-speech}{Xử lý giọng nói không có giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi rỗng & Đạt \\
+82 & \hyperlink{tc:check-voice-no-speech}{Xử lý giọng nói không có giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi rỗng & Đạt \\
 \hline
-84 & \hyperlink{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Error: Unsupported audio format. & Đạt \\
+83 & \hyperlink{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Error: Unsupported audio format. & Đạt \\
 \hline
 \end{longtable}
