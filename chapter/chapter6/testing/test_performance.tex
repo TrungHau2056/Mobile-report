@@ -1,0 +1,61 @@
+\subsection{Kiểm thử hiệu năng}
+
+Đánh giá hiệu năng là bước quan trọng nhằm xác định mức độ đáp ứng, độ ổn định và khả năng chịu tải của hệ thống dưới các điều kiện sử dụng khác nhau. 
+Mục tiêu của quá trình kiểm thử hiệu năng là đảm bảo ứng dụng duy trì thời gian phản hồi tốt, hoạt động ổn định và không xảy ra lỗi khi số lượng người dùng tăng hoặc khi hệ thống thực hiện nhiều tác vụ đồng thời.
+
+Trong dự án này, nhóm sử dụng \textbf{Apache JMeter} -- công cụ mã nguồn mở phổ biến cho kiểm thử tải và đo lường hiệu năng -- để:
+\begin{itemize}
+    \item Mô phỏng lượng người dùng truy cập.
+    \item Thực thi các kịch bản nghiệp vụ.
+    \item Thu thập số liệu thực nghiệm.
+\end{itemize}
+
+\textbf{Jmeter} cho phép tạo các \textit{test plan} linh hoạt, gửi nhiều loại yêu cầu (HTTP, API, database, ...) và quan sát các chỉ số quan trọng:
+\begin{itemize}
+    \item \textbf{Thời gian phản hồi:} đo tốc độ hệ thống trả lời yêu cầu.
+    \item \textbf{Tốc độ xử lý (Throughput):} số lượng yêu cầu xử lý trên giây.
+    \item \textbf{Tỷ lệ lỗi:} phần trăm các yêu cầu thất bại.
+\end{itemize}
+
+\noindent Hệ thống được triển khai trên cấu hình kiểm thử như sau:
+\begin{itemize}
+    \item \textbf{Thread group:} JMeter khởi tạo 100 người dùng ảo trong vòng 5 giây (tương đương khoảng 20 users/giây). Mỗi người dùng thực hiện 1 vòng lặp kịch bản để mô phỏng lượng lớn yêu cầu đồng thời.
+    \item \textbf{Test Plan:} tập trung kiểm thử các API REST của hệ thống.
+    \item \textbf{Thành phần hỗ trợ:} HTTP Header Manager, Response Assertion, Post Processor – JSON Extractor, Listener.
+\end{itemize}
+
+\noindent \textbf{Các API được kiểm thử:}
+\begin{itemize}
+    \item \textbf{Xác thực và người dùng:}
+    \begin{itemize}
+        \item POST /auth/register
+        \item POST /auth/login
+        \item PUT /user/changePassword
+        \item GET /auth/refresh
+        \item PUT /users
+        \item GET /users
+        \item POST /auth/logout
+    \end{itemize}
+    \item \textbf{Quản lý tracks:}
+    \begin{itemize}
+        \item GET /tracks
+        \item GET /tracks/search?keyword=Taylor
+        \item GET /tracks/next/33333333-3333-3333-3333-333333333333
+    \end{itemize}
+    \item \textbf{Lịch sử và yêu thích:}
+    \begin{itemize}
+        \item GET /history/search
+        \item POST /favorites/add
+        \item GET /favorites
+        \item POST /favorites/delete
+    \end{itemize}
+\end{itemize}
+
+\noindent \textbf{Kết quả kiểm thử:}
+\begin{itemize}
+    \item Thời gian phản hồi tối đa (Max Response Time): \textbf{< 1.9 giây}
+    \item Tỉ lệ lỗi (Error / Fail): \textbf{0\%}
+    \item Tốc độ xử lý (Throughput): \textbf{166 requests/giây}
+\end{itemize}
+
+\noindent \textbf{Đánh giá:} Ứng dụng hoàn toàn đáp ứng yêu cầu tải của bài kiểm thử và phù hợp cho triển khai thực tế.
