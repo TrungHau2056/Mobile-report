@@ -13,7 +13,7 @@ biểu diễn trong biểu đồ \ref{fig:fair_hac} dưới đây.
   \label{fig:fair_hac}
 \end{figure}
 
-\textbf{HAC-NSW} chính là mở rộng của \textbf{Hyper Actor Critic} Framework, một framework
+\textbf{HAC-NSW} chính là mở rộng của \textbf{Hyper Actor Critic} Framework \cite{liu2023exploration}, một framework
 mạnh mẽ cho gợi ý với không gian gợi ý lớn (large item space). Nó hoạt động dựa trên cơ chế nén không gian dữ liệu lớn lại thành \textbf{miền ẩn} (latent space) thông qua
 một phép chiếu từ không gian bậc cao với số chiều lớn xuống một không gian bậc thấp có số chiều nhỏ hơn. Mô hình tìm kiếm những gợi ý trên miền này sau đó phục dựng
 những gợi ý trong không gian gợi ý ban đầu qua một phép chiếu ngược của phép chiếu ban đầu. Bản chất của mô hình HAC nằm ở việc học hai phép chiếu này một cách hiệu
@@ -25,12 +25,12 @@ HAC ban đầu sinh ra như có thể thấy, chính là HAC Module trong hình 
 mô hình này, việc tối ưu hóa trên miền ẩn gây nên sự mất cân bằng lớn giữa nhiều người dùng (có người sẽ nhận kết quả gợi ý rất tốt trong khi số khác lại không).
 Đó là vì HAC thiếu đi một module có khả năng đem thông tin của sự cân bằng giữa những người dùng vào để tối ưu hóa chính sách.
 
-Điều này dẫn tới động lực khai sinh ra HAC-NSW. NSW chính là một hàm thuộc họ Social Welfare, hàm này có khả năng tích hợp tốt và linh hoạt, quan trọng nhất là
+Điều này dẫn tới động lực khai sinh ra HAC-NSW. NSW \cite{fan2023welfare} chính là một hàm thuộc họ Social Welfare, hàm này có khả năng tích hợp tốt và linh hoạt, quan trọng nhất là
 nó bao hàm trực tiếp thông tin về sự \textbf{cân bằng} trong hàm. Từ đó tích hợp NSW vào HAC làm tăng tính cân bằng giữa các người dùng của hệ thống.
 
 \subsection{HAC-NSW và InsightTune}
 Nhận thấy sự cân bằng này là rất quan trọng trong một trình duyệt âm nhạc nhiều người dùng, và phù hợp với mục đích tích hợp AI một cách hiệu quả, chúng tôi đã lựa
-chọn mô hình HAC-NSW làm mô hình chính cho hệ thống \textbf{InsightTune} 
+chọn mô hình HAC-NSW \cite{nguyen2025enhance} làm mô hình chính cho hệ thống \textbf{InsightTune} 
 
 Để xây dựng hiệu quả mô hình gợi ý, chúng tôi đã thu thập dữ liệu từ nhiều nguồn khác nhau trên mạng. Vì mục đích chính của \textbf{InsightTune} là làm một ví dụ,
 khuôn mẫu tích hợp AI một cách quả nên cần thiết phải có một hệ thống gợi ý hoàn chỉnh tương thích cao. Dữ liệu hiện tại của hệ thống \textbf{InsightTune} chưa
