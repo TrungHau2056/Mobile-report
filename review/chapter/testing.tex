@@ -1,4 +1,52 @@
 \chapter{Cài đặt và thực nghiệm}
+
+
+
+\subsection{Triển khai chatbot}
+\subsubsection{Người phản biện: Trần Trung Hậu}
+\textbf{Điểm mạnh}
+\begin{itemize}
+    \item Sử dụng kiến trúc hiện đại, phù hợp với mục đích triển khai chatbot luật với cấu trúc phức tạp, tham số chồng chéo.
+    \item Quy trình xử lí dữ liệu rõ ràng, mạch lạc. 
+    \item Sử dụng công cụ và thư viện phù hợp với AI, LLM.
+\end{itemize}
+\textbf{Điểm hạn chế}
+\begin{itemize}
+    \item Quy mô dữ liệu và kiểm thử chưa cao, cần mở rộng thêm để đánh giá chính xác hơn.
+    \item Dữ liệu chưa chi tiết (Nhóm cũng chưa nhận do chưa có chuyên môn về luật).
+\end{itemize}
+
+\subsection{Kiểm thử hiệu năng}
+\subsubsection{Người phản biện: Trần Trung Hậu}
+\textbf{Điểm mạnh}
+\begin{itemize}
+    \item Các phần kiểm thử được trình bày rõ ràng, mạch lạc, dễ hiểu.
+    \item Các công cụ kiểm thử được lựa chọn phù hợp với mục đích kiểm thử.
+    \item Dữ liệu kiểm thử cụ thể, đa dạng.
+\end{itemize}
+
+\textbf{Điểm hạn chế}
+\begin{itemize}
+    \item Thiếu phương pháp kiểm thử chi tiết, nên mô tả thêm về kết quả mong đợi và kết quả thực tế để so sánh và đánh giá chính xác hơn.
+    \item Kết luận cần nêu ra, đánh giá kĩ về những điểm tốt, và những điểm chưa tốt.
+    \item Cần bổ sung thêm kiểm thử tải (load testing) để đánh giá hiệu năng hệ thống dưới tải cao.
+\end{itemize}
+
+\subsection{Kiểm thử hệ thống}
+\subsubsection{Người phản biện: Trần Trung Hậu}
+\textbf{Điểm mạnh}
+\begin{itemize}
+    \item Kiểm thử bao quát được hết các chức năng quan trọng của ứng dụng. 
+    \item Testcase được thiết kế tuân thủ cầu trúc chuẩn gồm mã kiểm thử, mô tả, tiêu đề,\dots
+    \item Kiểm thử chatbot có phương pháp rõ ràng, đáng giá bằng metrics tiên tiến và có một kết quả tích cực.
+\end{itemize}
+
+\textbf{Điểm hạn chế}
+\begin{itemize}
+    \item Một vài testcase còn bị sai sót về mặt logic như kết quả mong đợi và kết quả thực tế giống nhau nhưng lại bị đánh giá là thất bại (fail).
+    \item Một vài testcase bị faild nhưng không có phần phân tích nguyên nhân và hướng khắc phục.
+    \item Cần bổ sung thêm kiểm thử bảo mật để đánh giá mức độ an toàn của hệ thống.
+\end{itemize}
 Các ca kiểm thử hiệu năng, chức năng chưa có ngày và người kiểm thử. 
 \subsection{Chưa giải thích giao diện}
 Hình \ref{fig:hoang_2} cho thấy giao diện khi chủ nhà lần đầu đăng kí, nhưng nhóm chưa chỉ rõ từng thành phần, chưa chỉ rõ chủ nhà khi lần đầu đăng kí sẽ đăng kí các thông tin nào và như thế nào.
